@@ -1,0 +1,22 @@
+.rgstr {
+  text-align: center;
+  border: 1px;
+  padding: 20px;
+}
+
+.success {
+    font-weight: bold;
+}
+input {
+  border-radius: 3px;
+  border: 1px solid gray;
+
+}
+.ng-invalid:not(form) {
+  border-left: 3px solid red;
+}
+
+.ng-valid:not(form) {
+  border-left: 3px solid green;
+
+}

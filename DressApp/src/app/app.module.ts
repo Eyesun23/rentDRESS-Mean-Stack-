@@ -10,6 +10,9 @@ import { AboutComponent } from './about/about.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { SingledressComponent } from './singledress/singledress.component';
 import { Routes, RouterModule} from '@angular/router';
+import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
+import { HttpModule } from '@angular/http';
+
 const routes: Routes = [];
 
 @NgModule({
@@ -23,7 +26,9 @@ const routes: Routes = [];
     SingledressComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [RegistrationService, GetdressService],
   bootstrap: [AppComponent]
