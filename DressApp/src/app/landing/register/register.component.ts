@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../user';
-
+import {RegistrationService} from '../../registration.service';
+import {Router} from "@angular/router"
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +11,8 @@ import { User } from '../../user';
 export class RegisterComponent  {
   states: Array<string> = [];
   user = new User();
-  constructor() {
+  moreusers = [];
+  constructor(public _register: RegistrationService, public _router: Router) {
     this.user = new User();
     this.states = ["Alaska",
                       "Alabama",
@@ -66,7 +68,21 @@ export class RegisterComponent  {
   }
   onSubmit() {
     console.log("submit");
-    this.user = new User()
+    console.log(this.user)
+    this._register.registerUser(this.user)
+    .then((data) => {
+      (user) => {this.moreusers.push(user)}
+      console.log(data, "callback from register request")
+      this.user = data;
+      this._router.navigate([`dashboard`])
+
+    })
+    .catch(
+      (err) => {
+        console.log(err, "status was an error catch trigger")
+      }
+    )
+    // this.user = new User()
 
   };
 }

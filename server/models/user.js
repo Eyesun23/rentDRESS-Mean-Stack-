@@ -9,3 +9,5 @@ var UserSchema = new mongoose.Schema({
   city: String,
   state: String
 })
+
+mongoose.model("User", UserSchema);

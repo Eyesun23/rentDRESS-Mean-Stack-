@@ -1,4 +1,4 @@
-<div id="work" *ngIf='success'>
+<div id="work">
   <p>Thank you for registering with us</p>
 </div>
 <div class="rgstr">
@@ -52,7 +52,7 @@
       <span *ngIf='!state.valid && state.dirty'>
       <i>State is required</i></span><br><br>
 
-    <input type="submit" [disabled]="!regForm.form.valid" value="Register">
+    <input type="submit" [disabled]="!myForm.form.valid" value="Register">
     {{ myForm.valid | json }}
     </form>
 </div>
