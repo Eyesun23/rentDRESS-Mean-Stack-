@@ -1,5 +1,14 @@
-h1 {
+p {
 text-align: center;
 font-weight:bolder;
 padding-top: 20px;
+font-size: 20px;
+}
+
+.gooz {
+  color: black;
+  padding: 20px;
+  width: 500px;
+  margin-left: 50px;
+  margin-right: 50px;
 }

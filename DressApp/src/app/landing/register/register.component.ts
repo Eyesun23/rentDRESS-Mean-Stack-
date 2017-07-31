@@ -7,11 +7,11 @@ import {Router} from "@angular/router"
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-
-export class RegisterComponent  {
+export class RegisterComponent implements OnInit {
   states: Array<string> = [];
   user = new User();
   moreusers = [];
+  ngOnInit(){}
   constructor(public _register: RegistrationService, public _router: Router) {
     this.user = new User();
     this.states = ["Alaska",

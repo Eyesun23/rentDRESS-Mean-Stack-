@@ -17,4 +17,11 @@ export class RegistrationService {
     // })
     // return bubbles;
   }
+
+  findingtheUser(thatuser){
+    console.log("we're finding user for logging in from registeration.service.ts")
+    this.currentUser = thatuser;
+    return this._http.post('/findinguser', {thatuser: thatuser}).map(data=>data.json()).toPromise();
+
+  }
 }
